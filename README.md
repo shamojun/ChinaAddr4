@@ -15,9 +15,9 @@
 ## 整体架构
 
 1. **数据层**：基于行政区划数据集构建四级地址基础库（省/市/区/街道），并支持别名扩展。
-2. **索引层**：通过 uild_index.py 构建 SQLite FTS5 索引，用于高性能模糊检索。
-3. **匹配引擎**：ddress_matcher.py 负责地址纠错、候选召回与评分排序。
-4. **服务层**：pp.py 提供 HTTP API，对外提供 /match 查询服务。
+2. **索引层**：通过 build_index.py 构建 SQLite FTS5 索引，用于高性能模糊检索。
+3. **匹配引擎**：address_matcher.py 负责地址纠错、候选召回与评分排序。
+4. **服务层**：app.py 提供 HTTP API，对外提供 /match 查询服务。
 
 ## 进一步方案
 
@@ -28,17 +28,18 @@
 
 运行只依赖 `dist/data.sqlite`。
 
-- pp.py：HTTP 服务入口，对外提供 /match 查询接口
-- ddress_matcher.py：地址纠错与匹配核心逻辑
-- uild_index.py：构建 SQLite FTS5 离线索引
+- app.py：HTTP 服务入口，对外提供 /match 查询接口
+- address_matcher.py：地址纠错与匹配核心逻辑
+- build_index.py：构建 SQLite FTS5 离线索引
 - dist/：行政区划数据集与别名数据（详见致谢）
-- equirements.txt：Python 依赖列表
+- 
+equirements.txt：Python 依赖列表
 
 ## 使用
 
 ### 第一步：处理离线数据（可多次清理）
 
-`ash
+`bash
 python build_index.py
 `
 
@@ -46,13 +47,13 @@ python build_index.py
 
 ### 第二步：启动服务并查询
 
-`ash
+`bash
 python app.py
 `
 
 接口示例：
 
-`ash
+`bash
 GET /match?q=地址文本&deep=1&topn=5
 POST /match {"address":"地址文本","deep":true,"topn":5}
 `
