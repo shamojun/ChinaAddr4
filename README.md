@@ -32,8 +32,7 @@
 - address_matcher.py：地址纠错与匹配核心逻辑
 - build_index.py：构建 SQLite FTS5 离线索引
 - dist/：行政区划数据集与别名数据（详见致谢）
-- 
-equirements.txt：Python 依赖列表
+- requirements.txt：Python 依赖列表
 
 ## 使用
 
