@@ -60,6 +60,6 @@ POST /match {"address":"地址文本","deep":true,"topn":5}
 
 ## 致谢
 
-感谢开源项目 **Administrative-divisions-of-China** 提供高质量行政区划数据集，为本项目的地址纠错与标准化奠定了基础。
+感谢开源项目 **Administrative-divisions-of-China** 提供高质量行政区数据集，为本项目的地址纠错与标准化奠定了基础。
 
 特别说明：dist 目录下的数据集由 **Administrative-divisions-of-China** 提供，来源地址：[Administrative-divisions-of-China](https://github.com/modood/administrative-divisions-of-china)。再次感谢该项目的开源贡献。
