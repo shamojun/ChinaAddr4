@@ -1,0 +1,2 @@
+pypinyin==0.53.0
+opencc-python-reimplemented==0.1.7
